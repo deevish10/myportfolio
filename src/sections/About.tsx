@@ -13,11 +13,7 @@ const About: React.FC = () => {
                         that provides challenging opportunities for growth and development.
                         I am passionate and willing to learn new technologies and skills required for the field of work.
                     </p>
-                    <p>
-                        With a focus on <span className="highlight">Data Science</span> and <span className="highlight">Full Stack Development</span>,
-                        I have built projects ranging from AI-powered mobile apps to efficient utility tools.
-                        I am always eager to tackle complex problems and deliver innovative solutions.
-                    </p>
+
 
                     <div className="education-timeline">
                         <h3>Education</h3>
