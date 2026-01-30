@@ -1,20 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Contact.css';
 
 const Contact: React.FC = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        const subject = `Portfolio Contact from ${formData.name}`;
-        const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
-        window.location.href = `mailto:deevish07@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-    };
-
     return (
         <section id="contact" className="section contact-section">
             <h2 className="section-title">Get In <span className="text-gradient">Touch</span></h2>
@@ -51,15 +38,14 @@ const Contact: React.FC = () => {
                     </div>
                 </div>
 
-                <form className="contact-form" onSubmit={handleSubmit}>
+                <form className="contact-form" action="mailto:deevish07@gmail.com" method="POST" encType="text/plain">
                     <div className="form-group">
                         <label htmlFor="name">Name</label>
                         <input
                             type="text"
                             id="name"
+                            name="name"
                             placeholder="Your Name"
-                            value={formData.name}
-                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                             required
                         />
                     </div>
@@ -68,9 +54,8 @@ const Contact: React.FC = () => {
                         <input
                             type="email"
                             id="email"
+                            name="email"
                             placeholder="Your Email"
-                            value={formData.email}
-                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             required
                         />
                     </div>
@@ -78,10 +63,9 @@ const Contact: React.FC = () => {
                         <label htmlFor="message">Message</label>
                         <textarea
                             id="message"
+                            name="message"
                             rows={5}
                             placeholder="Your Message"
-                            value={formData.message}
-                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                             required
                         ></textarea>
                     </div>
