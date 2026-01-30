@@ -38,7 +38,13 @@ const Contact: React.FC = () => {
                     </div>
                 </div>
 
-                <form className="contact-form" action="mailto:deevish07@gmail.com" method="POST" encType="text/plain">
+                <form className="contact-form" action="https://formsubmit.co/deevish07@gmail.com" method="POST">
+                    {/* FormSubmit Configuration */}
+                    <input type="hidden" name="_subject" value="New Contact Form Submission!" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_next" value="https://deevish10.github.io/myportfolio/" />
+                    <input type="text" name="_honey" style={{ display: 'none' }} />
+
                     <div className="form-group">
                         <label htmlFor="name">Name</label>
                         <input
